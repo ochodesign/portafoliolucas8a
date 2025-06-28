@@ -45,6 +45,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- RESALTADO DE MENÚ SEGÚN SCROLL (solo una vez, sin duplicados) ---
+  (function() {
+    const navLinks = document.querySelectorAll('.nav__link');
+    const sections = [
+      document.getElementById('inicio'),
+      document.getElementById('sobremi'),
+      document.getElementById('proyectos'),
+      document.getElementById('contacto')
+    ];
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const scrollY = window.scrollY + 120; // margen para header fijo
+      sections.forEach(section => {
+        if (section && section.offsetTop <= scrollY) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  })();
+
   // Efecto animación al aparecer (fade-in)
   const fadeEls = document.querySelectorAll('.project-card, .about__img, .about__info, .contact__form');
   const observer = new IntersectionObserver((entries) => {
@@ -219,20 +245,23 @@ window.addEventListener('DOMContentLoaded', () => {
   animateTimeline();
 });
 
-// Mostrar/ocultar el botón de volver al inicio
-window.addEventListener('scroll', () => {
-  const btn = document.querySelector('.scroll-to-top');
-  if (!btn) return;
-  if (window.scrollY > 300) {
-    btn.style.display = 'flex';
-  } else {
-    btn.style.display = 'none';
-  }
-});
+// Mostrar/ocultar scroll-to-top
+(function() {
+  const scrollBtn = document.querySelector('.scroll-to-top');
+  if (scrollBtn) scrollBtn.style.display = 'none';
+  window.addEventListener('scroll', function() {
+    if (!scrollBtn) return;
+    if (window.scrollY > 300) {
+      scrollBtn.style.display = 'flex';
+    } else {
+      scrollBtn.style.display = 'none';
+    }
+  });
+})();
 
-// Inicializar estado del botón scroll-to-top
-const btnInit = document.querySelector('.scroll-to-top');
-if (btnInit) btnInit.style.display = 'none';
+// Inicialmente oculto
+const scrollBtnInit = document.querySelector('.scroll-to-top');
+if (scrollBtnInit) scrollBtnInit.style.display = 'none';
 
 // Scroll suave al hacer clic en el botón de volver al inicio
 document.addEventListener('DOMContentLoaded', () => {
@@ -532,3 +561,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const wspMsg = document.getElementById('wsp-msg');
+
+  // Mostrar mensaje después de 5 segundos
+  setTimeout(() => {
+    if (wspMsg) {
+      wspMsg.style.display = 'flex';
+      setTimeout(() => {
+        closeWspMsg();
+      }, 7000); // Ocultar automáticamente después de 7 segundos
+    }
+  }, 5000);
+});
+
+function closeWspMsg() {
+  const wspMsg = document.getElementById('wsp-msg');
+  if (wspMsg) wspMsg.style.display = 'none';
+}
