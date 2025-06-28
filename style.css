@@ -241,7 +241,7 @@
   z-index: 2;
 }
 .privacidad-modal__close:hover {
-  color: var(--color-accent);
+  color: #ff4747);
 }
 .privacidad-modal ul {
   margin-left: 1.2rem;
