@@ -13,30 +13,61 @@
   <meta property="og:url" content="https://luki8a.github.io/portafoliolucas8a/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_ES" />
-  <meta name="google-site-verification" content="qaXG4VoE6dZGccZ2liVvIkQcrrNQ1rqwsU2yL2ew7DE" />
 
   <title>Lucas Ochoa | Portafolio Web</title>
-  <!-- Favicon -->
-  <link rel="icon" type="image/webp" href="img/logo-lucas-8a-portafolio-web.webp">
-  <link rel="apple-touch-icon" href="img/logo-lucas-8a-portafolio-web.webp">
+  <!-- Favicon optimizado -->
+  <link rel="icon" type="image/webp" href="img/logo-lucas-8a-portafolio-web.webp" sizes="48x48 64x64 128x128 256x256">
+  <link rel="apple-touch-icon" href="img/logo-lucas-8a-portafolio-web.webp" sizes="180x180">
   <!-- Preload de imagen crítica del hero -->
-  <link rel="preload" href="img/bg-hero-lucas-8a.webp" as="image">
+  <link rel="preload" href="img/bg-hero-lucas-8a.webp" as="image" imagesrcset="img/bg-hero-lucas-8a.webp 1920w, img/bg-hero-lucas-8a.webp 1280w" imagesizes="100vw">
   <link rel="stylesheet" href="style.css">
   <!-- Preconnect para optimizar carga de fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Tipografía Google Fonts optimizada -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Preload de Font Awesome para iconos críticos -->
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <!-- Font Awesome no bloqueante -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+  <!-- Animaciones sutiles -->
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .button-hover:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const fadeElements = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      });
+      fadeElements.forEach(el => observer.observe(el));
+    });
+  </script>
 </head>
 <body>
   <!-- Header fijo con logo/nombre y menú -->
   <header class="header">
     <div class="container header__container">
       <div class="logo">
-        <img src="img/logo-lucas-8a-portafolio-web.webp" alt="Lucas Ochoa - Diseñador UX/UI" class="logo-image">
+        <img src="img/logo-lucas-8a-portafolio-web.webp" alt="Lucas Ochoa - Diseñador UX/UI" class="logo-image" width="50" height="50" loading="eager" fetchpriority="high">
       </div>
       <nav class="nav">
         <ul class="nav__list">
@@ -92,12 +123,12 @@
   <div class="container about__container">
    
     <!-- Contenido principal -->
-    <div class="about__info">
+    <div class="about__info fade-in">
 
      <!-- Foto de perfil destacada -->
     <div class="about__img">
       <div class="profile-pic-highlight">
-        <img src="img/Lucas-Perfil.webp" alt="Foto de perfil Lucas Ochoa" class="profile-pic--large" loading="lazy">
+        <img src="img/Lucas-Perfil.webp" alt="Foto de perfil Lucas Ochoa" class="profile-pic--large" width="220" height="220" loading="lazy">
       </div>
     </div>
 
@@ -109,28 +140,28 @@
       <div class="about__skills">
         <h3>Herramientas de Diseño y Prototipado</h3>
         <ul class="skills-list">
-          <li><img src="redes-sociales/figma.png" alt="Icono de herramienta de diseño" loading="lazy">Figma</li>
-          <li><img src="redes-sociales/visual-basico.png" alt="Icono de editor de código" loading="lazy">VSC</li>
+          <li><img src="redes-sociales/figma.png" alt="Icono de herramienta de diseño" width="24" height="24" loading="lazy">Figma</li>
+          <li><img src="redes-sociales/visual-basico.png" alt="Icono de editor de código" width="24" height="24" loading="lazy">VSC</li>
         </ul>
         <h3>Habilidades de Desarrollo Web</h3>
         <ul class="skills-list">
-          <li><img src="redes-sociales/html-5.png" alt="Icono de lenguaje de marcado" loading="lazy">HTML</li>
-          <li><img src="redes-sociales/css-3.png" alt="Icono de hojas de estilo" loading="lazy">CSS</li>
-          <li><img src="redes-sociales/js.png" alt="Icono de lenguaje de programación" loading="lazy">JavaScript</li>
+          <li><img src="redes-sociales/html-5.png" alt="Icono de lenguaje de marcado" width="24" height="24" loading="lazy">HTML</li>
+          <li><img src="redes-sociales/css-3.png" alt="Icono de hojas de estilo" width="24" height="24" loading="lazy">CSS</li>
+          <li><img src="redes-sociales/js.png" alt="Icono de lenguaje de programación" width="24" height="24" loading="lazy">JavaScript</li>
         </ul>
         <h3>Conceptos y Metodologías UX/UI</h3>
         <ul class="skills-list">
-          <li><img src="redes-sociales/interfaz-ux.png" alt="Icono de experiencia de usuario" loading="lazy">Diseño UX</li>
-          <li><img src="redes-sociales/ui.png" alt="Icono de interfaz de usuario" loading="lazy">Diseño UI</li>
-          <li><img src="redes-sociales/estructura-de-la-jerarquia.png" alt="Icono de organización de información" loading="lazy">Arquitectura de la Información</li>
-          <li><img src="redes-sociales/test-de-velocidad.png" alt="Icono de pruebas de usabilidad" loading="lazy">Usability Testing</li>
-          <li><img src="redes-sociales/accesibilidad.png" alt="Icono de diseño inclusivo" loading="lazy">Accesibilidad</li>
+          <li><img src="redes-sociales/interfaz-ux.png" alt="Icono de experiencia de usuario" width="24" height="24" loading="lazy">Diseño UX</li>
+          <li><img src="redes-sociales/ui.png" alt="Icono de interfaz de usuario" width="24" height="24" loading="lazy">Diseño UI</li>
+          <li><img src="redes-sociales/estructura-de-la-jerarquia.png" alt="Icono de organización de información" width="24" height="24" loading="lazy">Arquitectura de la Información</li>
+          <li><img src="redes-sociales/test-de-velocidad.png" alt="Icono de pruebas de usabilidad" width="24" height="24" loading="lazy">Usability Testing</li>
+          <li><img src="redes-sociales/accesibilidad.png" alt="Icono de diseño inclusivo" width="24" height="24" loading="lazy">Accesibilidad</li>
         </ul>
         <h3>Herramientas Avanzadas y AI</h3>
         <ul class="skills-list">
-          <li><img src="redes-sociales/github (1).png" alt="Icono de asistente de programación" loading="lazy">GitHub Copilot</li>
-          <li><img src="redes-sociales/logo-chatgpt.png" alt="Icono de inteligencia artificial" style="width: 20px; height: 20px;" loading="lazy">ChatGPT</li>
-          <li><img src="redes-sociales/google-gemini-icon.webp" alt="Icono de IA generativa" style="width: 20px; height: 20px;" loading="lazy">Gemini AI</li>
+          <li><img src="redes-sociales/github (1).png" alt="Icono de asistente de programación" width="24" height="24" loading="lazy">GitHub Copilot</li>
+          <li><img src="redes-sociales/logo-chatgpt.png" alt="Icono de inteligencia artificial" style="width: 20px; height: 20px;" width="20" height="20" loading="lazy">ChatGPT</li>
+          <li><img src="redes-sociales/google-gemini-icon.webp" alt="Icono de IA generativa" style="width: 20px; height: 20px;" width="20" height="20" loading="lazy">Gemini AI</li>
         </ul>
       </div>
       <!-- Filosofía de diseño -->
@@ -145,21 +176,61 @@
         <h3>Hobbies</h3>
         <ul class="interests-list">
           <li class="interest-item">
-            <img src="redes-sociales/jugador-de-futbol.png" alt="Icono de deporte" class="interest-icon" loading="lazy">
+            <img src="redes-sociales/jugador-de-futbol.png" alt="Icono de deporte" class="interest-icon" width="32" height="32" loading="lazy">
             <span>El Futból</span>
           </li>
           <li class="interest-item">
-            <img src="redes-sociales/escucha.png" alt="Icono de entretenimiento" class="interest-icon" loading="lazy">
+            <img src="redes-sociales/escucha.png" alt="Icono de entretenimiento" class="interest-icon" width="32" height="32" loading="lazy">
             <span>La Musica</span>
           </li>
           <li class="interest-item">
-            <img src="redes-sociales/cuidado-de-mascotas.png" alt="Icono de cuidado animal" class="interest-icon" loading="lazy">
+            <img src="redes-sociales/cuidado-de-mascotas.png" alt="Icono de cuidado animal" class="interest-icon" width="32" height="32" loading="lazy">
             <span>Mis Mascotas</span>
           </li>
         </ul>
       </div>
     </div>
   </div>
+      <!-- Sección Metodología -->
+    <section id="metodologia" class="timeline">
+  <div class="timeline__header">
+    <h2>Mi Metodología de Trabajo</h2>
+    <p class="timeline__desc">Un proceso iterativo y creativo, desde la inspiración hasta la mejora continua.</p>
+  </div>
+  <div class="timeline__container">
+    <div class="timeline__line"></div>
+    <div class="timeline__item fade-in">
+      <div class="timeline__dot"></div>
+      <div class="timeline__content">
+        <h3>Inspiración</h3>
+        <p>Mi proceso creativo comienza siempre con la inspiración. Antes de diseñar, me tomo el tiempo para explorar: investigo tendencias, analizo otras webs y busco referencias visuales en plataformas como Pinterest o Behance. Esta etapa me ayuda a nutrir mi mirada y abrir el panorama a nuevas ideas.</p>
+      </div>
+    </div>
+    <div class="timeline__item fade-in">
+      <div class="timeline__dot"></div>
+      <div class="timeline__content">
+        <h3>Organización y Arquitectura</h3>
+        <p>Cuando las ideas ya toman forma, organizo el proyecto dividiéndolo en partes pequeñas y concretas. Creo una arquitectura de la información clara, identificando cada desafío como un punto a resolver. Así, trabajo paso a paso, con foco en cada detalle, hasta construir un resultado coherente, funcional y bien pensado.</p>
+      </div>
+    </div>
+    <div class="timeline__item fade-in">
+      <div class="timeline__dot"></div>
+      <div class="timeline__content">
+        <h3>Acción e Iteración</h3>
+        <p>Luego paso directamente a la acción, combinando diseño e iteración constante. Me siento muy cómodo con el enfoque ágil: probar, equivocarse, ajustar y mejorar. No espero a tener todo resuelto para empezar; creo mientras avanzo, porque sé que las mejores soluciones surgen en el camino.</p>
+      </div>
+    </div>
+    <div class="timeline__item fade-in">
+      <div class="timeline__dot"></div>
+      <div class="timeline__content">
+        <h3>Etapa Final</h3>
+        <p>Y cuando el diseño está terminado, el proceso no se detiene. Vuelvo a mirar, a testear, a iterar. Porque cada proyecto es una oportunidad para seguir aprendiendo, perfeccionar lo creado y llevar las ideas un poco más lejos.</p>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</section>
 </section>
 
     <!-- Sección Proyectos -->
@@ -168,8 +239,8 @@
         <h2>Proyectos</h2>
         <div class="projects__grid">
           <!-- Tarjeta de proyecto ejemplo -->
-          <article class="project-card">
-            <img src="img/web-futsorteo.webp" alt="Captura de pantalla del proyecto Futsorteo" class="project-card__img" loading="lazy">
+          <article class="project-card fade-in">
+            <img src="img/web-futsorteo.webp" alt="Captura de pantalla del proyecto Futsorteo" class="project-card__img" width="400" height="225" loading="lazy">
             <div class="project-card__body">
               <h3>Futsorteo</h3>
               <p>Una herramienta intuitiva para organizar tus partidos de fútbol 5. Futsorteo genera equipos aleatorios y equilibrados al instante, permitiéndote designar porteros para una selección de equipos sin complicaciones.</p>
@@ -181,12 +252,12 @@
                 
               </div>
               <div class="project-card__links">
-                <a href="https://luki8a.github.io/Futsorteo/" target="_blank" class="btn btn--primary">¡Explora el proyecto! <i class="fas fa-arrow-right"></i></a>
+                <a href="https://luki8a.github.io/Futsorteo/" target="_blank" class="btn btn--primary button-hover">¡Explora el proyecto! <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
           </article>
-          <article class="project-card">
-            <img src="img/web-equiposantillan.webp" alt="Captura de pantalla del proyecto Equipo Santillán" class="project-card__img" loading="lazy">
+          <article class="project-card fade-in">
+            <img src="img/web-equiposantillan.webp" alt="Captura de pantalla del proyecto Equipo Santillán" class="project-card__img" width="400" height="225" loading="lazy">
             <div class="project-card__body">
               <h3>Equipo Santillán</h3>
               <p>Un proyecto web diseñado para Equipo Santillán, destacando las clases de boxeo para todos los niveles. Capturamos la esencia del entrenamiento profesional y la personalización, invitando a nuevos alumnos a superar sus límites y alcanzar sus metas bajo la guía de un experto certificado.</p>
@@ -198,12 +269,12 @@
                 
               </div>
               <div class="project-card__links">
-                <a href="https://luki8a.github.io/equiposantillan/" target="_blank" class="btn btn--primary">¡Explora el proyecto! <i class="fas fa-arrow-right"></i></a>
+                <a href="https://luki8a.github.io/equiposantillan/" target="_blank" class="btn btn--primary button-hover">¡Explora el proyecto! <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
           </article>
-          <article class="project-card">
-            <img src="img/web-porfolio.webp" alt="Captura de pantalla del proyecto Ocho Design Web" class="project-card__img" loading="lazy">
+          <article class="project-card fade-in">
+            <img src="img/web-porfolio.webp" alt="Captura de pantalla del proyecto Ocho Design Web" class="project-card__img" width="400" height="225" loading="lazy">
             <div class="project-card__body">
               <h3>Ocho Design Web</h3>
               <p>Un sitio web showcase de Ocho Design Web, destacando nuestra especialización en diseño y desarrollo web profesional. Presenta cómo creamos soluciones digitales atractivas y funcionales que impulsan la presencia online y el éxito de negocios, optimizadas para captar clientes.</p>
@@ -213,7 +284,7 @@
                 <span>JS</span>
               </div>
               <div class="project-card__links">
-                <a href="https://luki8a.github.io/ochodesignweb/" target="_blank" class="btn btn--primary">¡Explora el proyecto! <i class="fas fa-arrow-right"></i></a>
+                <a href="https://luki8a.github.io/ochodesignweb/" target="_blank" class="btn btn--primary button-hover">¡Explora el proyecto! <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
           </article>
@@ -223,58 +294,22 @@
       </div>
     </section>
 
-    <!-- Sección Metodología -->
-    <section id="metodologia" class="timeline">
-  <div class="timeline__header">
-    <h2>Mi Metodología de Trabajo</h2>
-    <p class="timeline__desc">Un proceso iterativo y creativo, desde la inspiración hasta la mejora continua.</p>
-  </div>
-  <div class="timeline__container">
-    <div class="timeline__line"></div>
-    <div class="timeline__item">
-      <div class="timeline__dot"></div>
-      <div class="timeline__content">
-        <h3>Inspiración</h3>
-        <p>Mi proceso creativo comienza siempre con la inspiración. Antes de diseñar, me tomo el tiempo para explorar: investigo tendencias, analizo otras webs y busco referencias visuales en plataformas como Pinterest o Behance. Esta etapa me ayuda a nutrir mi mirada y abrir el panorama a nuevas ideas.</p>
-      </div>
-    </div>
-    <div class="timeline__item">
-      <div class="timeline__dot"></div>
-      <div class="timeline__content">
-        <h3>Organización y Arquitectura</h3>
-        <p>Cuando las ideas ya toman forma, organizo el proyecto dividiéndolo en partes pequeñas y concretas. Creo una arquitectura de la información clara, identificando cada desafío como un punto a resolver. Así, trabajo paso a paso, con foco en cada detalle, hasta construir un resultado coherente, funcional y bien pensado.</p>
-      </div>
-    </div>
-    <div class="timeline__item">
-      <div class="timeline__dot"></div>
-      <div class="timeline__content">
-        <h3>Acción e Iteración</h3>
-        <p>Luego paso directamente a la acción, combinando diseño e iteración constante. Me siento muy cómodo con el enfoque ágil: probar, equivocarse, ajustar y mejorar. No espero a tener todo resuelto para empezar; creo mientras avanzo, porque sé que las mejores soluciones surgen en el camino.</p>
-      </div>
-    </div>
-    <div class="timeline__item">
-      <div class="timeline__dot"></div>
-      <div class="timeline__content">
-        <h3>Etapa Final</h3>
-        <p>Y cuando el diseño está terminado, el proceso no se detiene. Vuelvo a mirar, a testear, a iterar. Porque cada proyecto es una oportunidad para seguir aprendiendo, perfeccionar lo creado y llevar las ideas un poco más lejos.</p>
-      </div>
-    </div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 
 <!-- Formulario de contacto -->
 <section id="contacto" class="contacto-burbujas-section">
   <h2>Contacto</h2>
   <div class="burbujas-sociales burbujas-horizontal" style="justify-content: center;">
-    <a href="mailto:ocho.digital2024@gmail.com" class="burbuja-social gmail" target="_blank" aria-label="Gmail">
-      <i class="fa-solid fa-envelope"></i>
-    </a>
-    <a href="https://wa.me/1164623427" class="burbuja-social whatsapp" target="_blank" aria-label="WhatsApp">
-      <i class="fa-brands fa-whatsapp"></i>
-    </a>
+    <!-- Enlace de correo con asunto predefinido -->
+<a href="mailto:ocho.digital2024@gmail.com?subject=Consulta%20desde%20tu%20portafolio%20web" class="burbuja-social gmail" target="_blank" aria-label="Gmail">
+  <i class="fa-solid fa-envelope"></i>
+</a>
+
+<!-- Enlace de WhatsApp con mensaje automático -->
+<a href="https://wa.me/1164623427?text=Hola%20Lucas,%20te%20hablo%20desde%20tu%20portafolio%20web" class="burbuja-social whatsapp" target="_blank" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
     <a href="https://instagram.com/luki8a" class="burbuja-social instagram" target="_blank" aria-label="Instagram">
       <i class="fa-brands fa-instagram"></i>
     </a>
@@ -312,7 +347,7 @@
         </div>
       </div>
       
-      <button type="submit" class="submit-btn">
+      <button type="submit" class="submit-btn button-hover">
         <span class="btn-text">Enviar mensaje</span>
         <i class="fas fa-paper-plane"></i>
       </button>
@@ -324,7 +359,6 @@
 
   <!-- Footer minimalista -->
   <footer>
-
   <nav class="footer-nav">
     <a href="#inicio">Inicio</a>
     <a href="#proyectos">Proyectos</a>
@@ -349,15 +383,25 @@
     </a>
   </div>
   <div class="footer-legal">
-    <a href="#" class="footer-link-privacidad" id="open-privacidad">Política de Privacidad</a>    <link rel="icon" type="image/webp" href="img/logo-lucas-8a-portafolio-web.webp">
-    <link rel="apple-touch-icon" href="img/logo-lucas-8a-portafolio-web.webp">
+    <a href="#" class="footer-link-privacidad" id="open-privacidad">Política de Privacidad</a>
   </div>
   <p class="footer-copy">&copy; 2025 Todos los derechos reservados.</p>
   <p class="footer-copy">Página diseñada por  <span class="ochoo"> El ochoo</span></p>
 </footer>
 
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/541164623427?text=Hola%20Lucas,%20te%20hablo%20desde%20tu%20portafolio%20web" class="wsp-btn" aria-label="WhatsApp">
+  <img src="img/logo-whatsapp-web.webp" alt="WhatsApp" width="38" height="38" loading="lazy" />
+</a>
 
-  <a href="#inicio" class="scroll-to-top" aria-label="Volver al inicio">
+<!-- Mensaje flotante de WhatsApp -->
+<div id="wsp-msg" class="wsp-msg">
+  <span>¡Hola! Estoy aquí para ayudarte 😊</span>
+  <button onclick="closeWspMsg()">✕</button>
+</div>
+
+<!-- Botón scroll-to-top -->
+<a href="#inicio" class="scroll-to-top" aria-label="Volver al inicio">
   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
 </a>
 
