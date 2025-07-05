@@ -6,32 +6,36 @@
   <!-- Optimización de rendimiento -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme-color" content="#6c63ff">
-  <meta name="description" content="Portafolio de Lucas Ochoa - Diseñador UX/UI especializado en experiencias digitales funcionales. Descubre mis proyectos de desarrollo web, metodología de trabajo y cómo puedo ayudarte a crear soluciones digitales efectivas.">
-  <meta property="og:title" content="Portafolio Personal | Lucas 8A" />
-  <meta property="og:description" content="Descubre el portafolio de proyectos de desarrollo web y diseño de Lucas 8A." />
+  <meta name="description" content="Descubre el portafolio de Lucas Ochoa, diseñador UX/UI y web. Proyectos innovadores, diseño funcional y soluciones digitales efectivas para tu negocio.">
+  <meta property="og:title" content="Lucas Ochoa | Diseñador UX/UI y Web" />
+  <meta property="og:description" content="Explora los proyectos de Lucas Ochoa: diseño web profesional, experiencias digitales intuitivas y soluciones creativas para empresas." />
   <meta property="og:image" content="https://luki8a.github.io/portafoliolucas8a/img/logo-lucas-8a-portafolio-web.webp" />
   <meta property="og:url" content="https://luki8a.github.io/portafoliolucas8a/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_ES" />
 
-  <title>Lucas Ochoa | Portafolio Web</title>
+  <title>Lucas Ochoa | Diseñador UX/UI y Web</title>
   <!-- Favicon optimizado -->
   <link rel="icon" type="image/webp" href="img/logo-lucas-8a-portafolio-web.webp" sizes="48x48 64x64 128x128 256x256">
   <link rel="apple-touch-icon" href="img/logo-lucas-8a-portafolio-web.webp" sizes="180x180">
+  <!-- Optimización de rendimiento -->
+  <link rel="preload" href="style.css" as="style">
+  <link rel="stylesheet" href="style.css">
   <!-- Preload de imagen crítica del hero -->
   <link rel="preload" href="img/bg-hero-lucas-8a.webp" as="image" imagesrcset="img/bg-hero-lucas-8a.webp 1920w, img/bg-hero-lucas-8a.webp 1280w" imagesizes="100vw">
-  <link rel="stylesheet" href="style.css">
-  <!-- Preconnect para optimizar carga de fuentes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Tipografía Google Fonts optimizada -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"></noscript>
   <!-- Font Awesome no bloqueante -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-  <!-- Animaciones sutiles -->
+  <!-- Fallback para texto visible mientras se cargan las fuentes -->
   <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
@@ -61,6 +65,23 @@
       fadeElements.forEach(el => observer.observe(el));
     });
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Lucas Ochoa",
+    "jobTitle": "Diseñador UX/UI y Web",
+    "url": "https://luki8a.github.io/portafoliolucas8a/",
+    "image": "https://luki8a.github.io/portafoliolucas8a/img/logo-lucas-8a-portafolio-web.webp",
+    "description": "Descubre el portafolio de Lucas Ochoa, diseñador UX/UI y web. Proyectos innovadores, diseño funcional y soluciones digitales efectivas para tu negocio.",
+    "sameAs": [
+      "https://www.instagram.com/luki8a/",
+      "https://linkedin.com/in/ochoux",
+      "https://github.com/luki8a",
+      "https://behance.net/ochoux"
+    ]
+  }
+  </script>
 </head>
 <body>
   <!-- Header fijo con logo/nombre y menú -->
@@ -73,10 +94,10 @@
       </div>
       <nav class="nav">
         <ul class="nav__list">
-          <li><a href="#inicio" class="nav__link active">Inicio - Página Principal</a></li>
-          <li><a href="#sobremi" class="nav__link">Sobre mí - Conóceme</a></li>
-          <li><a href="#proyectos" class="nav__link">Proyectos - Mi Trabajo</a></li>
-          <li><a href="#contacto" class="nav__link">Contacto - Escríbeme</a></li>
+          <li><a href="#inicio" class="nav__link active" title="Ir a la página principal">Inicio - Página Principal</a></li>
+          <li><a href="#sobremi" class="nav__link" title="Conóceme">Sobre mí - Conóceme</a></li>
+          <li><a href="#proyectos" class="nav__link" title="Explora mis proyectos">Proyectos - Mi Trabajo</a></li>
+          <li><a href="#contacto" class="nav__link" title="Escríbeme">Contacto - Escríbeme</a></li>
         </ul>
       </nav>
       <!-- Botón menú mobile -->
@@ -99,7 +120,7 @@
             <span class="hero__title-line">Diseñador Digital!</span>
           </h1>
           <p class="hero__description">
-           Especializado en UX/UI y diseño web, mi trabajo consiste en convertir visiones en experiencias digitales funcionales.
+           Soy Lucas Ochoa, Diseñador Digital especializado en UX/UI y diseño web. Mi trabajo consiste en convertir visiones en experiencias digitales funcionales y atractivas.
           </p>
           <div class="hero__cta">
             <div class="hero__cta-buttons">
@@ -387,7 +408,7 @@
 </footer>
 
 <!-- Botón flotante de WhatsApp -->
-<a href="https://wa.me/541164623427?text=Hola%20Lucas,%20te%20hablo%20desde%20tu%20portafolio%20web" class="wsp-btn" aria-label="WhatsApp">
+<a href="https://wa.me/541164623427?text=Hola%20Lucas,%20te%20hablo%20desde%20tu%20portafolio%20web" class="wsp-btn" aria-label="WhatsApp" title="Contactar por WhatsApp">
   <img src="img/logo-whatsapp-web.webp" alt="WhatsApp" width="38" height="38" loading="lazy" />
 </a>
 
@@ -398,7 +419,7 @@
 </div>
 
 <!-- Botón scroll-to-top -->
-<a href="#inicio" class="scroll-to-top" aria-label="Volver al inicio">
+<a href="#inicio" class="scroll-to-top" aria-label="Volver al inicio" title="Volver al inicio">
   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
 </a>
 
