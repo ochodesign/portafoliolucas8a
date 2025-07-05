@@ -61,7 +61,7 @@
   border-color: #554ee2;
 }
 .cta-button--secundario {
-  background: var(--color-gray);
+  background: #ff4747;
   color: var(--color-accent);
   border: 1.5px solid #e0e0e0;
   box-shadow: none;
@@ -112,8 +112,8 @@
 }
 /* Botón secundario hero */
 .cta-button--secundario {
-  background: #fff;
-  color: var(--color-accent);
+  background: #ff4747;
+  color: #ffff;
   border: 1.5px solid var(--color-accent);
   margin-left: 0.7em;
   font-weight: 500;
