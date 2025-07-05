@@ -377,52 +377,48 @@
 
   <!-- Footer minimalista -->
   <footer>
-  <nav class="footer-nav">
-    <a href="#inicio">Inicio</a>
-    <a href="#proyectos">Proyectos</a>
-    <a href="#sobre-mi">Sobre mí</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-  <div class="footer-social">
-    <a href="https://www.instagram.com/luki8a/" target="_blank" aria-label="Instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://linkedin.com/in/ochoux" target="_blank" aria-label="LinkedIn">
-      <i class="fab fa-linkedin"></i>
-    </a>
-    <a href="https://github.com/luki8a" target="_blank" aria-label="GitHub">
-      <i class="fab fa-github"></i>
-    </a>
-    <a href="https://behance.net/ochoux" target="_blank" aria-label="Behance">
-      <i class="fab fa-behance"></i>
-    </a>
-    <a href="https://wa.me/1164623427" target="_blank" aria-label="WhatsApp">
-      <i class="fab fa-whatsapp"></i>
-    </a>
+    <nav class="footer-nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/luki8a/" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://linkedin.com/in/ochoux" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/luki8a" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://behance.net/ochoux" target="_blank" aria-label="Behance">
+        <i class="fab fa-behance"></i>
+      </a>
+      <a href="https://wa.me/1164623427" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+    <div class="footer-legal">
+      <a href="#" class="footer-link-privacidad" id="open-privacidad">Política de Privacidad</a>
+    </div>
+    <p class="footer-copy">&copy; 2025 Todos los derechos reservados.</p>
+    <p class="footer-copy">Página diseñada por  <span class="ochoo"> El ocho</span></p>
+  </footer>
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/541164623427?text=Hola%20Lucas,%20te%20hablo%20desde%20tu%20portafolio%20web" class="wsp-btn" aria-label="WhatsApp" title="Contactar por WhatsApp">
+    <img src="img/logo-whatsapp-web.webp" alt="WhatsApp" width="38" height="38" loading="lazy" />
+  </a>
+  <!-- Mensaje flotante de WhatsApp -->
+  <div id="wsp-msg" class="wsp-msg">
+    <span>¡Hola! Estoy aquí para ayudarte 😊</span>
+    <button onclick="closeWspMsg()">✕</button>
   </div>
-  <div class="footer-legal">
-    <a href="#" class="footer-link-privacidad" id="open-privacidad">Política de Privacidad</a>
-  </div>
-  <p class="footer-copy">&copy; 2025 Todos los derechos reservados.</p>
-  <p class="footer-copy">Página diseñada por  <span class="ochoo"> El ocho</span></p>
-</footer>
-
-<!-- Botón flotante de WhatsApp -->
-<a href="https://wa.me/541164623427?text=Hola%20Lucas,%20te%20hablo%20desde%20tu%20portafolio%20web" class="wsp-btn" aria-label="WhatsApp" title="Contactar por WhatsApp">
-  <img src="img/logo-whatsapp-web.webp" alt="WhatsApp" width="38" height="38" loading="lazy" />
-</a>
-
-<!-- Mensaje flotante de WhatsApp -->
-<div id="wsp-msg" class="wsp-msg">
-  <span>¡Hola! Estoy aquí para ayudarte 😊</span>
-  <button onclick="closeWspMsg()">✕</button>
-</div>
-
-<!-- Botón scroll-to-top -->
-<a href="#inicio" class="scroll-to-top" aria-label="Volver al inicio" title="Volver al inicio">
-  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
-</a>
-
+  <!-- Botón scroll-to-top -->
+  <a href="#inicio" class="scroll-to-top" aria-label="Volver al inicio" title="Volver al inicio">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </a>
   <!-- Modal de Política de Privacidad -->
   <div id="privacidad-modal" class="privacidad-modal" aria-modal="true" role="dialog" tabindex="-1" style="display:none;">
     <div class="privacidad-modal__content">
@@ -454,10 +450,8 @@
       </ul>
     </div>
   </div>
-
   <script src="script.js" defer></script>
   <script defer>
-    // Modal de privacidad
     document.addEventListener('DOMContentLoaded', function() {
       const openPrivacidad = document.getElementById('open-privacidad');
       const closePrivacidad = document.getElementById('close-privacidad');
@@ -473,14 +467,12 @@
           privacidadModal.style.display = 'none';
           document.body.style.overflow = '';
         });
-        // Cerrar con fondo
         privacidadModal.addEventListener('click', function(e) {
           if (e.target === privacidadModal) {
             privacidadModal.style.display = 'none';
             document.body.style.overflow = '';
           }
         });
-        // Cerrar con ESC
         document.addEventListener('keydown', function(e) {
           if (e.key === 'Escape' && privacidadModal.style.display === 'flex') {
             privacidadModal.style.display = 'none';
@@ -489,6 +481,13 @@
         });
       }
     });
+  </script>
+  <!-- Correcciones adicionales -->
+  <script>
+    // Minificación de JS
+    function closeWspMsg() {
+      document.getElementById('wsp-msg').style.display = 'none';
+    }
   </script>
 </body>
 </html>
